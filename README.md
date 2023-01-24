@@ -7,10 +7,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </p>
 
-  <h2 align="center">PROJECT TITLE</h2>
+  <h2 align="center"><b>GOODTASK</b></h2>
 
   <p align="center">
-  Project Description!
+  A modern service whow 
     <br />
     <br />
     <a href="#"><strong>Explore the source code</strong></a>

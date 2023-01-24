@@ -8,8 +8,7 @@ export default class taskController{
         const data = await _taskApplication.CreateTask(request.body)
 
         response.json(data);
-        return response
-        
+        return response        
     }
  
     async GetAllTasks(request: Request, response: Response){
@@ -18,8 +17,7 @@ export default class taskController{
         const data = await _taskApplication.GetTasks();
         
         response.json(data);
-        return response
-    
+        return response    
     }
 
     async GetTaskById(request: Request, response: Response) {
@@ -29,7 +27,6 @@ export default class taskController{
         
         response.json(data);
         return response
-
     }
 
     async UpdateTask(request: Request, response: Response) {
@@ -39,7 +36,6 @@ export default class taskController{
         
         response.json(data);
         return response
-
     }
 
     async DeleteTask(request: Request, response: Response) {

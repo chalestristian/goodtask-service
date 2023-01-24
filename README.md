@@ -3,14 +3,14 @@
 <!-- PROJECT ICON -->
 <br />
 <div align="center">
-  <a href="#">
-    <img src="readme-images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  <p>
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </p>
 
   <h2 align="center">PROJECT TITLE</h2>
 
   <p align="center">
-    Project Description!
+  Project Description!
     <br />
     <br />
     <a href="#"><strong>Explore the source code</strong></a>
@@ -27,11 +27,13 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary><b>Summary</b></summary>
+  <summary><b>SUMMARY</b></summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#project-management">Project Management</a></li>
+        <li><a href="#design">Design</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -65,7 +67,19 @@ Here's why:
 Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
 
 
-<p align="right"><a href="#readme-top"><b>[BACK TO TOP] &#8593;</b></a></p>
+### Project Management
+
+This section should talk about the way I managed this project.
+[LINK TO JIRA](#)
+and talk more about the technologies and methodologies used.
+
+
+### Design
+
+This section should talk about the design and the reasons why I choose it.
+[LINK TO FIGMA](#)
+and talk more about.
+
 
 ### Built With
 
@@ -100,7 +114,7 @@ This is an example of how to list things you need to use the software and how to
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free API Key at [https://example.com](#)
 2. Clone the repo
    ```sh
    git clone https://github.com/your_username_/Project-Name.git
@@ -121,7 +135,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](#)_
 
 <p align="right"><a href="#readme-top"><b>[BACK TO TOP] &#8593;</b></a></p>
 
@@ -136,7 +150,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [ ] Chinese
     - [ ] Spanish
 
-See the [open issues]() for a full list of proposed features (and known issues).
 
 <p align="right"><a href="#readme-top"><b>[BACK TO TOP] &#8593;</b></a></p>
 
@@ -163,7 +176,7 @@ Use this space to list resources you find helpful and would like to give credit 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[product-screenshot]: readme-images/screenshot.png
+[product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB

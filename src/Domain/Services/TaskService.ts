@@ -3,7 +3,7 @@ import { TaskRepositoryAsync } from "../../InfraData/Repository/TaskRespositoryA
 
 export class TaskService{
 
-    async CreateTask(dados: ITasks){  
+    async CreateTask(dados: ITasks){
         
         const _taskRepository = new TaskRepositoryAsync;
 
@@ -16,7 +16,7 @@ export class TaskService{
 
     }
 
-    async GetTasksAsync(){
+    async GetTasks(){
         
         const _taskRepository = new TaskRepositoryAsync;
         const data = await _taskRepository.GetTasksAsync();

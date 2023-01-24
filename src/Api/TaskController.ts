@@ -1,47 +1,43 @@
 import {Request, Response, } from 'express';
-import { TaskApplication } from '../Application/TaskApplication';
+import { TaskService } from '../Domain/Services/TaskService';
+
 export default class taskController{
-        
+
     async AddTask(request: Request, response: Response) {
-
-        const _taskApplication = new TaskApplication;
-        const data = await _taskApplication.CreateTask(request.body)
+        const _taskService = new TaskService; 
+        const data = await _taskService.CreateTask(request.body)
 
         response.json(data);
-        return response        
-    }
- 
-    async GetAllTasks(request: Request, response: Response){
+        return response
+    } 
 
-        const _taskApplication = new TaskApplication;        
-        const data = await _taskApplication.GetTasks();
-        
+    async GetAllTasks (request: Request, response: Response)  {
+        const _taskService = new TaskService;        
+        const data = await _taskService.GetTasks();
+
         response.json(data);
-        return response    
+        return response
     }
 
     async GetTaskById(request: Request, response: Response) {
-
-        const _taskApplication = new TaskApplication;        
-        const data = await _taskApplication.GetTaskById(parseInt(request.params.id))
+        const _taskService = new TaskService;        
+        const data = await _taskService.GetTaskById(parseInt(request.params.id));
         
         response.json(data);
         return response
     }
 
     async UpdateTask(request: Request, response: Response) {
-
-        const _taskApplication = new TaskApplication;
-        const data = await _taskApplication.UpdateTask(request.body)
+        const _taskService = new TaskService;
+        const data = await _taskService.UpdateTask(request.body);
         
         response.json(data);
         return response
     }
 
     async DeleteTask(request: Request, response: Response) {
-
-        const _taskApplication = new TaskApplication;
-        const data = await _taskApplication.DeleteTask(parseInt(request.params.id))
+        const _taskService = new TaskService;
+        const data = await _taskService.DeleteTask(parseInt(request.params.id));
         
         response.json(data);
         return response

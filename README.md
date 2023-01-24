@@ -10,16 +10,16 @@
   <h2 align="center"><b>GOODTASK</b></h2>
 
   <p align="center">
-  A modern service whow 
+  A modern and simple api to serve a to-do list application 
     <br />
     <br />
-    <a href="#"><strong>Explore the source code</strong></a>
-    <br />
-    <a href="#">View Demo</a>
+    <a href="https://github.com/chalestristian/goodtask-service/tree/main/src"><strong>Explore the source code</strong></a>
+    <!--<br />-->
+    <!--<a href="#">View Demo</a>-->
     <br />
     <br />
     Welcome to <b>goodtask-service</b>!
-    <a href="#"><u><strong>&#10096; check goodtask-frontend &#10097;</strong></u></a>
+    <a href="https://github.com/chalestristian/goodtask-frontend"><u><strong>&#10096; check goodtask-frontend &#10097;</strong></u></a>
     <br />
     <br />
   </p>

@@ -32,8 +32,6 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#project-management">Project Management</a></li>
-        <li><a href="#design">Design</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -64,6 +62,8 @@ This project was initially created by me in 2021 while I was taking the _program
 My professor gave me an A for the project. He knows we didn't have the solution architecture class before yours, so he just wanted to see it work and it worked well.
 
 Now, more experienced, I decided to refactor this project to make it as simple and easy as possible, using concise patterns and updating the tools used.
+
+This project is about the service only. If you want to see the frontend, can go to: [chalestristian/goodtask-frontend](https://github.com/chalestristian/goodtask-frontend)
 
 <br />
 

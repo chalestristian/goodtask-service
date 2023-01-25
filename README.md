@@ -10,7 +10,7 @@
   <h2 align="center"><b>GOODTASK</b></h2>
 
   <p align="center">
-  A modern and simple api to serve a to-do list application 
+  A modern and simple API to serve a to-do list application 
     <br />
     <br />
     <a href="https://github.com/chalestristian/goodtask-service/tree/main/src"><strong>Explore the source code</strong></a>
@@ -45,8 +45,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -55,119 +53,111 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+<br />
+
 ![Product Name Screen Shot][product-screenshot]
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+<br />
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+This project was initially created by me in 2021 while I was taking the _programming of computational solutions_ class. When I did this project, the solution worked, but it didn't look good. I had no much idea about software architecture and that's the main reason why I decided to redo it.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+My professor gave me an A for the project. He knows we didn't have the solution architecture class before yours, so he just wanted to see it work and it worked well.
 
+Now, more experienced, I decided to refactor this project to make it as simple and easy as possible, using concise patterns and updating the tools used.
 
-### Project Management
-
-This section should talk about the way I managed this project.
-[LINK TO JIRA](#)
-and talk more about the technologies and methodologies used.
-
-
-### Design
-
-This section should talk about the design and the reasons why I choose it.
-[LINK TO FIGMA](#)
-and talk more about.
-
+<br />
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Major frameworks/libraries used to bootstrap this project:
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* ![Node][Node]
+* ![Express][Express]
+* ![Typescript][Typescript]
+* ![Postgres][Postgres]
+
+<br />
 
 <p align="right"><a href="#readme-top"><b>[BACK TO TOP] &#8593;</b></a></p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+This is an example of how you may setting up this project locally.
+To get a local copy up and running, follow these simple example steps.
+
+<br />
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+You need to have npm and git installed to continue.
 * npm
   ```sh
   npm install npm@latest -g
   ```
+ * git: <u>[git-scm.com](https://git-scm.com/)</u>
+  
+
+<br />
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](#)
-2. Clone the repo
+1. Clone the repo:
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/chalestristian/goodtask-service.git
    ```
-3. Install NPM packages
+2. Go to the main directory:
+   ```sh
+   cd goodtask-service/src
+   ```
+3. Install npm packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+4. You will need to create a database table to storage the data. For this, you can use the script model below on your favorite database tool, I suggest DBeaver:
+   ```sql
+   CREATE TABLE public.tasks (
+	  id serial4 NOT NULL,
+	  task varchar NOT NULL,
+	  active bool NOT NULL,
+	  created timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	  updated timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	  CONSTRAINT tasks_pkey PRIMARY KEY (id)
+    );
    ```
+5. Now, on the <b>/src</b> folder, create a .env file following the model:
+   ```sh
+   DB_HOST= your-dbhost-here
+   DB_PORT= your-dbport-here
+   DB_USERNAME= your-dbusername-here
+   DB_PASSWORD= your-dbpassword-here
+   DB_DATABASE= your-database-here
+   ```
+
+6. Now, you just have to compile and run the project with the following commands:
+   ```sh
+   npm run build
+   ```
+   ```sh
+   npm start
+   ```
+
+<br />
 
 <p align="right"><a href="#readme-top"><b>[BACK TO TOP] &#8593;</b></a></p>
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Once you have set the project up, you are able to use the API.
+By default, as you can see on <i>src/Server.ts</i>, the app will listen the 3000 port.
 
-_For more examples, please refer to the [Documentation](#)_
-
-<p align="right"><a href="#readme-top"><b>[BACK TO TOP] &#8593;</b></a></p>
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
+You can use a postman collection on <i>/postman</i> directory to try the CRUD.
+Just open postman and then: <i>menu > file > import</i> (or <b>CTRL + O</b>)
 
 <p align="right"><a href="#readme-top"><b>[BACK TO TOP] &#8593;</b></a></p>
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
-
-<p align="right"><a href="#readme-top"><b>[BACK TO TOP] &#8593;</b></a></p>
 <br><br>
 <div>
 <a href="https://www.linkedin.com/in/chalestristian/"><img src="https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555"></a>
@@ -177,19 +167,7 @@ Use this space to list resources you find helpful and would like to give credit 
 <!-- MARKDOWN LINKS & IMAGES -->
 
 [product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com
+[Node]: https://img.shields.io/badge/node-000000?style=for-the-badge&logo=nodedotjs&logoColor=green
+[Express]: https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white
+[Typescript]: https://img.shields.io/badge/typescript-000000?style=for-the-badge&logo=typescript&logoColor=blue
+[Postgres]: https://img.shields.io/badge/postgresql-000000?style=for-the-badge&logo=postgresql&logoColor=blue

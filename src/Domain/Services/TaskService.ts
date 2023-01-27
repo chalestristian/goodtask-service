@@ -4,27 +4,26 @@ import { TaskRepositoryAsync } from "../../InfraData/Repository/TaskRespositoryA
 export class TaskService{
 
     async CreateTask(dados: ITasks){
-        
+
         const _taskRepository = new TaskRepositoryAsync;
 
         dados.active = true;
         dados.created = new Date();
         dados.updated = new Date();        
+        
         const data = await _taskRepository.CreateTaskAsync(dados)
-
-        return data
-
+        
+        if(!data)
+        throw new Error('An error ocurred while creating task. Please, check the data and try again.')
+         
+        return data;
     }
 
     async GetTasks(){
         
         const _taskRepository = new TaskRepositoryAsync;
         const data = await _taskRepository.GetTasksAsync();
-
-        if(data)
-            return data
-                  
-        return {message: "No tasks found"}
+        return data
 
     }
     
@@ -33,11 +32,8 @@ export class TaskService{
         const _taskRepository = new TaskRepositoryAsync;    
         const data = await _taskRepository.GetTaskByIdAsync(id)
 
-        if(data)
-            return data
+        return data
 
-        return {message: "A task with this id was not found"}
-    
     }
 
     async UpdateTask(dados: ITasks){
@@ -47,8 +43,10 @@ export class TaskService{
         dados.updated = new Date();
         const data = await _taskRepository.UpdateTaskAsync(dados)
 
-        return data
-    
+        if(!data)
+        throw new Error('An error ocurred while updating task. Please, check the data and try again.')
+
+        return data    
     }
 
     async DeleteTask(id){        
@@ -57,6 +55,5 @@ export class TaskService{
         const data = await _taskRepository.DeleteTaskAsync(id)
 
         return data
-
     }
 }

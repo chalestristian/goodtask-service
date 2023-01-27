@@ -1,11 +1,9 @@
 import express from "express";
 import setupMiddlewares from "./config/middlewares";
 import router from "./config/router";
-import dotenv from 'dotenv'
 
-dotenv.config();
-require("dotenv").config();
 const app = express();
+app.use(express.json());
 
 setupMiddlewares(app);
 

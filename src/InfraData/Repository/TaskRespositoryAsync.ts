@@ -6,22 +6,20 @@ export class TaskRepositoryAsync {
     private _taskContext = AppDataSource.getRepository(Tasks);
 
     async CreateTaskAsync(data: ITasks){
-
+        
         const value = await this._taskContext        
         .createQueryBuilder("tasks")
         .insert()
         .into(Tasks)
         .values(data)
         .execute();        
-        return value;
-
+        return value.raw;
     }
 
     async GetTasksAsync(){
 
         const data = await this._taskContext.find()     
         return data;
-
     }
 
     async GetTaskByIdAsync(id: ITasks["id"]){
@@ -42,18 +40,18 @@ export class TaskRepositoryAsync {
         .set({...data})
         .where("id = :id", {id: data.id})
         .execute();
-        return value;
+        return value.raw;
 
     }
  
     async DeleteTaskAsync(id:ITasks["id"]){
 
-        await this._taskContext
+        const value = await this._taskContext
         .createQueryBuilder("tasks")
         .delete()
         .where("id = :id", { id: id })
         .execute()
-        return true;
-    
+        return value.raw;
+            
     }
 }
